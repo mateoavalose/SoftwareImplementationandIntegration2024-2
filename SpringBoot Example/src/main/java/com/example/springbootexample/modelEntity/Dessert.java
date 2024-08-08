@@ -9,6 +9,8 @@ import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 import lombok.Getter;
 import lombok.Setter;
+import jakarta.validation.constraints.Min;
+import jakarta.validation.constraints.Size;
 
 @Entity()
 @Table(name="desserts")
@@ -18,18 +20,18 @@ public class Dessert implements Serializable{
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Getter()
-    @Setter()
     private long id;
 
     @Column()
     @Getter()
     @Setter()
+    @Min(1)
     private double price;
 
-    @Column()
+    @Column(unique = true, nullable = false)
     @Getter()
     @Setter()
+    @Size(min = 3, max = 50, message = "Name must be between 3 and 50 characters")
     private String name;
 
     @Column(name="description")

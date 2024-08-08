@@ -18,4 +18,12 @@ public class DessertService implements IDessertService {
     public Dessert save(Dessert dessert) {
         return dessertDAO.save(dessert);
     }
+    @Override
+    public Dessert findById(Long id) {
+        return dessertDAO.findById(id).orElse(null);
+    }
+    @Override
+    public void deleteById(Long id) {
+        dessertDAO.deleteById(id);
+    }
 }
