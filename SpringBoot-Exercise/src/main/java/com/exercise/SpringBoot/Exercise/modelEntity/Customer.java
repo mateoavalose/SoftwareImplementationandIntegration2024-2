@@ -1,5 +1,6 @@
 package com.exercise.SpringBoot.Exercise.modelEntity;
 
+import java.util.List;
 import java.io.Serializable;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -50,5 +51,5 @@ public class Customer implements Serializable{
     @Getter()
     @Setter()
     @OneToMany(mappedBy = "customer")
-    private Purchase purchase;
+    private List<Purchase> purchase;
 }
