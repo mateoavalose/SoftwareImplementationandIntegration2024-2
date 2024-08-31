@@ -33,7 +33,7 @@ public class PurchaseService implements IPurchaseService {
     }
 
     @Override
-    public List<Purchase> getClientOrders(Long id) {
-        return purchaseDAO.getClientOrders(id);
+    public List<Purchase> getCustomerOrders(Long id) {
+        return purchaseDAO.getCustomerOrders(id);
     }
 }
