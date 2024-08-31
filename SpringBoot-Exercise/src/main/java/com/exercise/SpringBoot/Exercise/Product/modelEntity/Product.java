@@ -1,19 +1,22 @@
-package com.exercise.SpringBoot.Exercise.modelEntity;
+package com.exercise.SpringBoot.Exercise.Product.modelEntity;
 
+import java.util.List;
+import com.exercise.SpringBoot.Exercise.Purchase.modelEntity.Purchase;
 import java.io.Serializable;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
-import jakarta.persistence.JoinColumn;
-import jakarta.persistence.ManyToOne;
+import jakarta.persistence.OneToMany;
+import jakarta.persistence.Table;
 import jakarta.validation.constraints.Min;
 import lombok.Getter;
 import lombok.Setter;
 
 @Entity()
-public class Purchase implements Serializable{
+@Table(name = "products")
+public class Product implements Serializable{
     private static final long serialVersionUID = 1L;
     
     @Id
@@ -23,24 +26,30 @@ public class Purchase implements Serializable{
     @Column
     @Getter()
     @Setter()
-    // Date validation
-    private String date;
+    @Min(3)
+    private String name;
 
+    @Column
     @Getter()
     @Setter()
-    @ManyToOne
-    @JoinColumn(name = "customer_id", nullable = false)
-    private Customer customer;
-
-    @Getter()
-    @Setter()
-    @ManyToOne
-    @JoinColumn(name = "product_id", nullable = false)
-    private Product product;
+    @Min(3)
+    private String description;
 
     @Column
     @Getter()
     @Setter()
     @Min(1)
-    private int quantity;
+    private double price;
+
+    @Column
+    @Getter()
+    @Setter()
+    @Min(0)
+    private int stock;
+
+    @Column
+    @Getter()
+    @Setter()
+    @OneToMany(mappedBy = "product")
+    private List<Purchase> purchase;
 }

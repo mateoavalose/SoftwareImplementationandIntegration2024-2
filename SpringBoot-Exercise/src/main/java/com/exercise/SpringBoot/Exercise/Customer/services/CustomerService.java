@@ -1,7 +1,7 @@
-package com.exercise.SpringBoot.Exercise.services;
+package com.exercise.SpringBoot.Exercise.Customer.services;
 
-import com.exercise.SpringBoot.Exercise.modelEntity.Customer;
-import com.exercise.SpringBoot.Exercise.dao.ICustomerDAO;
+import com.exercise.SpringBoot.Exercise.Customer.dao.ICustomerDAO;
+import com.exercise.SpringBoot.Exercise.Customer.modelEntity.Customer;
 import java.util.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -10,6 +10,7 @@ import org.springframework.stereotype.Service;
 public class CustomerService implements ICustomerService {
     @Autowired
     private ICustomerDAO customerDAO;
+    
     @Override
     public List<Customer> findAll() {
         return customerDAO.findAll();

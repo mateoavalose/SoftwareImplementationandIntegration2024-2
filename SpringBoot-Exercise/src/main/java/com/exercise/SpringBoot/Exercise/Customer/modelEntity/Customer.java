@@ -1,6 +1,7 @@
-package com.exercise.SpringBoot.Exercise.modelEntity;
+package com.exercise.SpringBoot.Exercise.Customer.modelEntity;
 
 import java.util.List;
+import com.exercise.SpringBoot.Exercise.Purchase.modelEntity.Purchase;
 import java.io.Serializable;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -9,15 +10,16 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
+import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.Min;
 import lombok.Getter;
 import lombok.Setter;
 
 @Entity()
-@Table(name = "products")
-public class Product implements Serializable{
+@Table(name = "customers")
+public class Customer implements Serializable{
     private static final long serialVersionUID = 1L;
-    
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
@@ -32,23 +34,23 @@ public class Product implements Serializable{
     @Getter()
     @Setter()
     @Min(3)
-    private String description;
+    private String address;
 
     @Column
     @Getter()
     @Setter()
-    @Min(1)
-    private double price;
+    @Email()
+    private String email;
 
     @Column
     @Getter()
     @Setter()
-    @Min(0)
-    private int stock;
+    @Min(6)
+    private Integer phone;
 
     @Column
     @Getter()
     @Setter()
-    @OneToMany(mappedBy = "product")
+    @OneToMany(mappedBy = "customer")
     private List<Purchase> purchase;
 }

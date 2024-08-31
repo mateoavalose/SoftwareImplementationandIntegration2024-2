@@ -1,4 +1,4 @@
-package com.exercise.SpringBoot.Exercise.controllers;
+package com.exercise.SpringBoot.Exercise.Product.controllers;
 
 import java.util.*;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -10,10 +10,8 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-
-import com.exercise.SpringBoot.Exercise.modelEntity.Product;
-import com.exercise.SpringBoot.Exercise.services.IProductService;
-
+import com.exercise.SpringBoot.Exercise.Product.modelEntity.Product;
+import com.exercise.SpringBoot.Exercise.Product.services.IProductService;
 import io.swagger.v3.oas.annotations.parameters.RequestBody;
 import jakarta.validation.Valid;
 

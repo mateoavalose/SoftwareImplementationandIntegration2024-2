@@ -1,11 +1,10 @@
-package com.exercise.SpringBoot.Exercise.services;
+package com.exercise.SpringBoot.Exercise.Purchase.services;
 
 import java.util.List;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import com.exercise.SpringBoot.Exercise.dao.IPurchaseDAO;
-import com.exercise.SpringBoot.Exercise.modelEntity.Purchase;
+import com.exercise.SpringBoot.Exercise.Purchase.dao.IPurchaseDAO;
+import com.exercise.SpringBoot.Exercise.Purchase.modelEntity.Purchase;
 
 @Service
 public class PurchaseService implements IPurchaseService {

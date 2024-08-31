@@ -1,4 +1,4 @@
-package com.exercise.SpringBoot.Exercise.controllers;
+package com.exercise.SpringBoot.Exercise.Purchase.controllers;
 
 import java.util.*;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -9,9 +9,8 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-
-import com.exercise.SpringBoot.Exercise.modelEntity.Purchase;
-import com.exercise.SpringBoot.Exercise.services.IPurchaseService;
+import com.exercise.SpringBoot.Exercise.Purchase.modelEntity.Purchase;
+import com.exercise.SpringBoot.Exercise.Purchase.services.IPurchaseService;
 
 @RestController
 @RequestMapping("/purchase")
