@@ -31,4 +31,9 @@ public class PurchaseService implements IPurchaseService {
     public void deleteById(Long id) {
         purchaseDAO.deleteById(id);
     }
+
+    @Override
+    public List<Purchase> getClientOrders(Long id) {
+        return purchaseDAO.getClientOrders(id);
+    }
 }

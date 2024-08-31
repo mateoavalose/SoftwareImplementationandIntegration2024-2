@@ -8,4 +8,5 @@ public interface IPurchaseService {
     public Purchase save(Purchase Purchase);
     public Purchase findById(Long id);
     public void deleteById(Long id);
+    public List<Purchase> getClientOrders(Long id);
 }
