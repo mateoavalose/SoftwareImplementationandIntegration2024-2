@@ -62,7 +62,7 @@ public class PurchaseController {
     }
 
     @GetMapping("/client/{client_id}")
-    public List<Purchase> getCustomerOrders(Long client_id){
-        return purchaseService.getCustomerOrders(client_id);
+    public List<Purchase> getCustomerOrders(Long customer_id){
+        return purchaseService.getCustomerOrders(customer_id);
     }
 }
