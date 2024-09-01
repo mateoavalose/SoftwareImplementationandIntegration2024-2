@@ -66,4 +66,9 @@ public class ProductController {
         productToUpdate.setStock(product.getStock());
         return productService.save(productToUpdate);
     }
+
+    @GetMapping("/available")
+    public List<Product> getAvailableProducts() {
+        return productService.findAvailableProducts();
+    }
 }

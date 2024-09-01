@@ -30,4 +30,9 @@ public class ProductService implements IProductService{
     public void deleteById(Long id) {
         productDAO.deleteById(id);
     }
+
+    @Override
+    public List<Product> findAvailableProducts() {
+        return productDAO.findAvailableProducts();
+    }
 }

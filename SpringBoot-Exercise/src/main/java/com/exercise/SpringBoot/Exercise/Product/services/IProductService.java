@@ -11,4 +11,6 @@ public interface IProductService {
     public Product findById(Long id);
 
     public void deleteById(Long id);
+
+    public List<Product> findAvailableProducts();    
 }
