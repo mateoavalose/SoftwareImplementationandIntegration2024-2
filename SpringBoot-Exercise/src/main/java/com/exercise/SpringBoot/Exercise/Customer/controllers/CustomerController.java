@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import com.exercise.SpringBoot.Exercise.Customer.modelEntity.Customer;
 import com.exercise.SpringBoot.Exercise.Customer.services.ICustomerService;
-import io.swagger.v3.oas.annotations.parameters.RequestBody;
+import org.springframework.web.bind.annotation.RequestBody;
 import jakarta.validation.Valid;
 
 @RestController
@@ -30,6 +30,7 @@ public class CustomerController {
     public ResponseEntity<?> saveCustomer(@Valid @RequestBody Customer customer) {
         Map<String, String> response = new HashMap<>();
         try {
+            System.out.println(customer);
             customerService.save(customer);
         } catch (Exception e) {
             response.put("message", "Error: " + e.getMessage());

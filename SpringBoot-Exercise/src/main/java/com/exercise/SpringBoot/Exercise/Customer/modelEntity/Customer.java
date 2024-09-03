@@ -12,6 +12,7 @@ import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.Min;
+import jakarta.validation.constraints.Size;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -28,13 +29,13 @@ public class Customer implements Serializable{
     @Column
     @Getter()
     @Setter()
-    @Min(3)
+    @Size(min = 3)
     private String name;
 
     @Column
     @Getter()
     @Setter()
-    @Min(3)
+    @Size(min = 3)
     private String address;
 
     @Column
@@ -46,9 +47,21 @@ public class Customer implements Serializable{
     @Column
     @Getter()
     @Setter()
-    @Min(6)
+    @Size(min = 3)
     private Integer phone;
 
     @OneToMany(mappedBy = "customer")
     private List<Purchase> purchase;
+
+    @Override
+    public String toString() {
+        return "Customer{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", address='" + address + '\'' +
+                ", email='" + email + '\'' +
+                ", phone=" + phone +
+                ", purchase=" + purchase +
+                '}';
+    }
 }
