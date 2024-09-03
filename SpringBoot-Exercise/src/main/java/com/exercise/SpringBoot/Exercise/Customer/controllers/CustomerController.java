@@ -64,7 +64,6 @@ public class CustomerController {
         customerToUpdate.setEmail(customer.getEmail());
         customerToUpdate.setPhone(customer.getPhone());
         customerToUpdate.setAddress(customer.getAddress());
-        customerToUpdate.setPurchase(customer.getPurchase());
         return customerService.save(customerToUpdate);
     }
 }

@@ -49,9 +49,6 @@ public class Customer implements Serializable{
     @Min(6)
     private Integer phone;
 
-    @Column
-    @Getter()
-    @Setter()
     @OneToMany(mappedBy = "customer")
     private List<Purchase> purchase;
 }

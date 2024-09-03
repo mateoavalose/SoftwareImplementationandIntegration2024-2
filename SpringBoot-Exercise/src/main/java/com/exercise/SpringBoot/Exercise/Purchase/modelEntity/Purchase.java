@@ -31,13 +31,13 @@ public class Purchase implements Serializable{
 
     @Getter()
     @Setter()
-    @ManyToOne
+    @ManyToOne()
     @JoinColumn(name = "customer_id", nullable = false)
     private Customer customer;
 
     @Getter()
     @Setter()
-    @ManyToOne
+    @ManyToOne()
     @JoinColumn(name = "product_id", nullable = false)
     private Product product;
 

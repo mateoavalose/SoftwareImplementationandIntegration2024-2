@@ -48,9 +48,6 @@ public class Product implements Serializable{
     @Min(0)
     private int stock;
 
-    @Column
-    @Getter()
-    @Setter()
     @OneToMany(mappedBy = "product")
     private List<Purchase> purchase;
 }
