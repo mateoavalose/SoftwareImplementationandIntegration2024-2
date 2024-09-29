@@ -12,6 +12,7 @@ import lombok.Data;
 @Table(name = "attendee")
 @Data()
 public class Attendee {
+    @SuppressWarnings("unused")
     private static final long serialVersionUID = 1L;
 
     @Id
