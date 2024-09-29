@@ -19,4 +19,16 @@ public class Event {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id", updatable = false, nullable = false)
     private Long id;
+
+    @Column(name = "name", nullable = false)
+    private String name;
+
+    @Column(name = "date", nullable = false)
+    private String date;
+
+    @Column(name = "description", nullable = false)
+    private String description;
+
+    @Column(name = "location", nullable = false)
+    private String location;
 }
